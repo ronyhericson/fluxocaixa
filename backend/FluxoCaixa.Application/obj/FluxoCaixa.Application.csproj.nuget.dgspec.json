@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Application\\FluxoCaixa.Application.csproj": {}
+    "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Application\\FluxoCaixa.Application.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Application\\FluxoCaixa.Application.csproj": {
+    "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Application\\FluxoCaixa.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Application\\FluxoCaixa.Application.csproj",
+        "projectUniqueName": "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Application\\FluxoCaixa.Application.csproj",
         "projectName": "FluxoCaixa.Application",
-        "projectPath": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Application\\FluxoCaixa.Application.csproj",
+        "projectPath": "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Application\\FluxoCaixa.Application.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Application\\obj\\",
+        "outputPath": "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -21,7 +21,6 @@
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,6 +38,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "AE.Net.Mail": {
+              "target": "Package",
+              "version": "[1.7.10, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
