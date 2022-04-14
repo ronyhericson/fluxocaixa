@@ -62,5 +62,3 @@ obj/
 *.userosscache
 *.sln.docstates
 *.dtbcache
-
-FuturaServices/ApiGateways/OcelotApiGw/ocelot.json
