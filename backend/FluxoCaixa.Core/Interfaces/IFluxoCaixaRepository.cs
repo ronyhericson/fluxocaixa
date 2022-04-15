@@ -6,5 +6,6 @@ namespace FluxoCaixa.Core.Interfaces
     public interface IFluxoCaixaRepository 
     {
         Task<int> CreateMovto(MovtoFluxoCaixa fluxoCaixa);
+        Task<MovtoFluxoCaixa> GetUltimoLancamento();
     }
 }

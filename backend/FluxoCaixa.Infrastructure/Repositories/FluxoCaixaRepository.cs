@@ -16,6 +16,29 @@ namespace FluxoCaixa.Infrastructure.Repositories
             _connectionManager = connectionManager;
         }
 
+        public async Task<MovtoFluxoCaixa> GetUltimoLancamento()
+        {
+            var result = new MovtoFluxoCaixa();
+
+            using (var connection = await _connectionManager.GetConnectionAsync())
+            {
+                try
+                {
+                    var query = " Select * from fluxocaixa order by dt_movimento desc  limit 1";
+                    var FluxoCaixaQuery = await connection.QueryFirstOrDefaultAsync<MovtoFluxoCaixa>(query);
+
+                    result = FluxoCaixaQuery;
+                }
+                catch (Exception e)
+                {
+                    var error = e.Message;
+                    return null;
+                }
+
+            }
+
+            return result;
+        }
         public async Task<int> CreateMovto(MovtoFluxoCaixa fluxoCaixa)
         {
             int result = 0;
@@ -23,7 +46,7 @@ namespace FluxoCaixa.Infrastructure.Repositories
             using (var connection = await _connectionManager.GetConnectionAsync())
             {
                 try
-                {                    
+                {
                     var query = "INSERT INTO fluxocaixa (dt_movimento, tp_movimento, descricao, vl_movimento, vl_saldoatual) VALUES (@dtMovito, @TipoMovto, @Descricao, @VlMovito, @VlSaldoAtual) RETURNING ID;";
                     var FluxoCaixaQuery = await connection.QueryFirstOrDefaultAsync<MovtoFluxoCaixa>(query, new
                     {
@@ -38,8 +61,8 @@ namespace FluxoCaixa.Infrastructure.Repositories
                 }
                 catch (Exception e)
                 {
-                    var error = e.Message;                    
-                    return result = 0;
+                    var error = e.Message;
+                    result = 0;
                 }
 
             }

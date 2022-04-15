@@ -16,6 +16,13 @@ namespace FluxoCaixa.Application.Services
         
         public async Task<int> CreateMovto(MovtoFluxoCaixa fluxoCaixa)
         {
+            var ultimoMovimento = await _fluxoCaixaRepository.GetUltimoLancamento();
+
+            if (ultimoMovimento != null)
+                fluxoCaixa.vl_saldoatual = fluxoCaixa.tp_movimento == "DEBITO" ? 
+                     ultimoMovimento.vl_saldoatual - fluxoCaixa.vl_movimento : ultimoMovimento.vl_saldoatual + fluxoCaixa.vl_movimento;
+
+
             return await _fluxoCaixaRepository.CreateMovto(fluxoCaixa);
         }
     }
