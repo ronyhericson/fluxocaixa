@@ -24,7 +24,7 @@ namespace FluxoCaixa.Infrastructure.Repositories
             {
                 try
                 {                    
-                    var query = "INSERT INTO fluxocaixa (dtmovto, tpmovto, descricao, vlmovto, vlsaldoatual) VALUES (@dtMovito, @TipoMovto, @Descricao, @VlMovito, @VlSaldoAtual) RETURNING ID;";
+                    var query = "INSERT INTO fluxocaixa (dt_movimento, tp_movimento, descricao, vl_movimento, vl_saldoatual) VALUES (@dtMovito, @TipoMovto, @Descricao, @VlMovito, @VlSaldoAtual) RETURNING ID;";
                     var FluxoCaixaQuery = await connection.QueryFirstOrDefaultAsync<MovtoFluxoCaixa>(query, new
                     {
                         dtMovito = fluxoCaixa.dt_movimento,

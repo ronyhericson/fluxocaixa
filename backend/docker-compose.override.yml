@@ -2,7 +2,7 @@ version: '3.6'
 
 services:
   
-  futuradb:
+  fluxodb:
     image: postgres
     container_name: fluxodb
     restart: always

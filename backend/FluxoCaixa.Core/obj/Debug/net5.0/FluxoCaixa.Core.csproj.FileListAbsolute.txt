@@ -1,0 +1,12 @@
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Core\bin\Debug\net5.0\FluxoCaixa.Core.deps.json
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Core\bin\Debug\net5.0\FluxoCaixa.Core.dll
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Core\bin\Debug\net5.0\ref\FluxoCaixa.Core.dll
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Core\bin\Debug\net5.0\FluxoCaixa.Core.pdb
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Core\obj\Debug\net5.0\FluxoCaixa.Core.csproj.AssemblyReference.cache
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Core\obj\Debug\net5.0\FluxoCaixa.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Core\obj\Debug\net5.0\FluxoCaixa.Core.AssemblyInfoInputs.cache
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Core\obj\Debug\net5.0\FluxoCaixa.Core.AssemblyInfo.cs
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Core\obj\Debug\net5.0\FluxoCaixa.Core.csproj.CoreCompileInputs.cache
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Core\obj\Debug\net5.0\FluxoCaixa.Core.dll
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Core\obj\Debug\net5.0\ref\FluxoCaixa.Core.dll
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Core\obj\Debug\net5.0\FluxoCaixa.Core.pdb

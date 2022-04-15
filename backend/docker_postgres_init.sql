@@ -25,4 +25,21 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 /* .:: INICIO ::. TABLES */
 
+DROP SEQUENCE IF EXISTS fluxocaixa_id_seq;
+CREATE SEQUENCE fluxocaixa_id_seq
+					 INCREMENT 1
+					 MINVALUE 1
+					 MAXVALUE 9223372036854775807
+					 START 1
+					 CACHE 1;
 
+ CREATE TABLE IF NOT EXISTS fluxocaixa
+ (
+	id int not null DEFAULT nextval('fluxocaixa_id_seq'::regclass),
+	dt_movimento timestamp,
+	tp_movimento varchar(100),
+	descricao varchar(500),
+	vl_movimento numeric(14,2),
+	vl_saldoatual numeric(14,2),
+	constraint pk_fluxocaixa_id primary key (id)	
+ )

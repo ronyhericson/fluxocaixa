@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CBAjCpRJOr8voJccSK9cwTUoVHpzmdE+YO5kMWdS746BME9hSoqV1JfbE7ndglIpIukR1iMQ4STxJ3WO4bFHBw==",
+  "dgSpecHash": "1vSmuJOitBIQwSK/XhxHo8IH3XnO1WwZ+hjKLARFxrkVFfwjZiZiUCPR2z0Adrkbs46FHuA/ALcnGPL/VJ3kuw==",
   "success": true,
-  "projectFilePath": "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Infrastructure\\FluxoCaixa.Infrastructure.csproj",
+  "projectFilePath": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Infrastructure\\FluxoCaixa.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",

@@ -341,11 +341,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Infrastructure\\FluxoCaixa.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Infrastructure\\FluxoCaixa.Infrastructure.csproj",
       "projectName": "FluxoCaixa.Infrastructure",
-      "projectPath": "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Infrastructure\\FluxoCaixa.Infrastructure.csproj",
+      "projectPath": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Infrastructure\\FluxoCaixa.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Infrastructure\\obj\\",
+      "outputPath": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -355,14 +355,15 @@
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Core\\FluxoCaixa.Core.csproj": {
-              "projectPath": "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Core\\FluxoCaixa.Core.csproj"
+            "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Core\\FluxoCaixa.Core.csproj": {
+              "projectPath": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Core\\FluxoCaixa.Core.csproj"
             }
           }
         }
