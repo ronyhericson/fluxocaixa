@@ -1,5 +1,6 @@
 
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Dapper;
 using FluxoCaixa.Core.Entities;
@@ -15,6 +16,29 @@ namespace FluxoCaixa.Infrastructure.Repositories
         {
             _connectionManager = connectionManager;
         }
+        public async Task<IEnumerable<MovtoFluxoCaixa>> GetLancamentos()
+        {
+            var result = new List<MovtoFluxoCaixa>();
+
+            using (var connection = await _connectionManager.GetConnectionAsync())
+            {
+                try
+                {
+                    var query = "Select * from fluxocaixa order by id";
+                   
+                    result =(List<MovtoFluxoCaixa>)await connection.QueryAsync<MovtoFluxoCaixa>(query);;
+                }
+                catch (Exception e)
+                {
+                    var error = e.Message;
+                    return result;
+                }
+
+            }
+
+            return result;
+        }
+
 
         public async Task<MovtoFluxoCaixa> GetUltimoLancamento()
         {

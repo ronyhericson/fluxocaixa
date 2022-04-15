@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -34,6 +35,17 @@ namespace FluxoCaixa.API.Controllers
 
             
             return Ok(new { message = "Movimento inserido com sucesso." });
+        }
+
+        [HttpGet]        
+        [ProducesResponseType(typeof(IEnumerable<FluxoCaixaViewModel>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<IEnumerable<FluxoCaixaViewModel>>> GetLancamentos()
+        {
+            var listLancamentos = await _fluxoCaixaService.GetLancamentos();
+
+            var listLançamentosViewModel = _mapper.Map<List<FluxoCaixaViewModel>>(listLancamentos);
+
+            return Ok(listLançamentosViewModel);
         }
     }
 }

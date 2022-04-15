@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using FluxoCaixa.Application.Services.Interfaces;
 using FluxoCaixa.Core.Entities;
@@ -24,6 +25,11 @@ namespace FluxoCaixa.Application.Services
 
 
             return await _fluxoCaixaRepository.CreateMovto(fluxoCaixa);
+        }
+
+        public async Task<IEnumerable<MovtoFluxoCaixa>> GetLancamentos()
+        {
+            return await _fluxoCaixaRepository.GetLancamentos();
         }
     }
 }
