@@ -22,7 +22,8 @@ namespace FluxoCaixa.Application.Services
             if (ultimoMovimento != null)
                 fluxoCaixa.vl_saldoatual = fluxoCaixa.tp_movimento == "DEBITO" ? 
                      ultimoMovimento.vl_saldoatual - fluxoCaixa.vl_movimento : ultimoMovimento.vl_saldoatual + fluxoCaixa.vl_movimento;
-
+            else    
+                fluxoCaixa.vl_saldoatual = fluxoCaixa.vl_movimento;
 
             return await _fluxoCaixaRepository.CreateMovto(fluxoCaixa);
         }

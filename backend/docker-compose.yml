@@ -10,6 +10,12 @@ services:
 
   portainer:
     image: portainer/portainer-ce
+  
+  fluxocaixa.api:
+    image: ${DOCKER_REGISTRY-}fluxocaixa.api
+    build:
+      context: .
+      dockerfile: FluxoCaixa.API/Dockerfile
 
 volumes:
   postgres_data:

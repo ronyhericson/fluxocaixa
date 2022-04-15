@@ -42,3 +42,13 @@ services:
     networks:
       - postgres-network
 
+  fluxocaixa.api:
+    container_name: fluxocaixa.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "DatabaseSettings:ConnectionString=Server=fluxodb;Port=5432;Database=fluxocaixa;User Id=postgres;Password=admin;"                
+    ports:
+      - "8001:80"
+    networks:
+      - postgres-network
+
