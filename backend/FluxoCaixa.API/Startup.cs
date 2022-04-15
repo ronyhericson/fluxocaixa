@@ -1,15 +1,14 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using FluxoCaixa.API.Extensions;
+using FluxoCaixa.Core.Interfaces;
+using FluxoCaixa.Infrastructure.Repositories;
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace FluxoCaixa.API
@@ -27,11 +26,31 @@ namespace FluxoCaixa.API
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddSingleton<IConnectionManager>
+                  (new NpgsqlConnectionManager
+                      (
+                         Configuration["DatabaseSettings:ConnectionString"],
+                         null
+                      )
+                  );
+
+            Environment.SetEnvironmentVariable("connectionString", Configuration["DatabaseSettings:ConnectionString"]);
+
+            services
+                .AddRepositories()
+                .AddServices()
+                .AddCors()
+                .AddCustomFormat();
+
+            services.AddAutoMapper(typeof(Startup));
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FluxoCaixa.API", Version = "v1" });
             });
+
+            services.AddHealthChecks()
+                .AddNpgSql(Configuration["DatabaseSettings:ConnectionString"]);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,15 +63,22 @@ namespace FluxoCaixa.API
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FluxoCaixa.API v1"));
             }
 
-            app.UseHttpsRedirection();
+           app.UseRouting();
 
-            app.UseRouting();
-
+            app.UseCors(option => option.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
+                {
+                    Predicate = _ => true,
+                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                });
             });
         }
     }
