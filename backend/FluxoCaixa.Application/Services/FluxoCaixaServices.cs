@@ -27,9 +27,14 @@ namespace FluxoCaixa.Application.Services
             return await _fluxoCaixaRepository.CreateMovto(fluxoCaixa);
         }
 
-        public async Task<IEnumerable<MovtoFluxoCaixa>> GetLancamentos()
+        public async Task<IEnumerable<MovtoFluxoCaixa>> GetLancamentos(int id = 0)
         {
-            return await _fluxoCaixaRepository.GetLancamentos();
+            return await _fluxoCaixaRepository.GetLancamentos(id);
+        }
+
+        public async Task<long> RemoveMovimento(int id)
+        {
+            return await _fluxoCaixaRepository.RemoveMovimento(id);
         }
     }
 }

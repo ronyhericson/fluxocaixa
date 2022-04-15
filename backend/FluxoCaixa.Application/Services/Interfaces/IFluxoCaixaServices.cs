@@ -7,6 +7,7 @@ namespace FluxoCaixa.Application.Services.Interfaces
     public interface IFluxoCaixaServices
     {
         Task<int> CreateMovto(MovtoFluxoCaixa fluxoCaixa);
-        Task<IEnumerable<MovtoFluxoCaixa>> GetLancamentos();
+        Task<IEnumerable<MovtoFluxoCaixa>> GetLancamentos(int id = 0);
+        Task<long> RemoveMovimento(int id);
     }
 }

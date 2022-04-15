@@ -37,7 +37,7 @@ namespace FluxoCaixa.API.Controllers
             return Ok(new { message = "Movimento inserido com sucesso." });
         }
 
-        [HttpGet]        
+        [HttpGet]          
         [ProducesResponseType(typeof(IEnumerable<FluxoCaixaViewModel>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<FluxoCaixaViewModel>>> GetLancamentos()
         {
@@ -46,6 +46,31 @@ namespace FluxoCaixa.API.Controllers
             var listLançamentosViewModel = _mapper.Map<List<FluxoCaixaViewModel>>(listLancamentos);
 
             return Ok(listLançamentosViewModel);
+        }
+
+        [HttpGet]            
+        [Route("{id}")]
+        [ProducesResponseType(typeof(IEnumerable<FluxoCaixaViewModel>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<IEnumerable<FluxoCaixaViewModel>>> GetLancamentoById(int id = 0)
+        {
+            var listLancamentos = await _fluxoCaixaService.GetLancamentos(id);
+
+            var listLançamentosViewModel = _mapper.Map<List<FluxoCaixaViewModel>>(listLancamentos);
+
+            return Ok(listLançamentosViewModel);
+        }
+
+        [HttpDelete]   
+        [Route("{id}")]     
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<string>> RemoveLancamento(int id)
+        {
+            var removeMovto = await _fluxoCaixaService.RemoveMovimento(id);
+
+            if(removeMovto == 0)
+                return BadRequest(new { message = "Problemas para remover este movimento." });
+
+            return Ok(new { message = "Movimento removido com sucesso." });
         }
     }
 }

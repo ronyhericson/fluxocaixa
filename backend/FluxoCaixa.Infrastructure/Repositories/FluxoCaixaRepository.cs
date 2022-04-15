@@ -16,7 +16,7 @@ namespace FluxoCaixa.Infrastructure.Repositories
         {
             _connectionManager = connectionManager;
         }
-        public async Task<IEnumerable<MovtoFluxoCaixa>> GetLancamentos()
+        public async Task<IEnumerable<MovtoFluxoCaixa>> GetLancamentos(int id = 0)
         {
             var result = new List<MovtoFluxoCaixa>();
 
@@ -24,7 +24,7 @@ namespace FluxoCaixa.Infrastructure.Repositories
             {
                 try
                 {
-                    var query = "Select * from fluxocaixa order by id";
+                    var query = string.Format("Select * from fluxocaixa {0} order by id ", id > 0 ? " Where id = " + id.ToString() : string.Empty);
                    
                     result =(List<MovtoFluxoCaixa>)await connection.QueryAsync<MovtoFluxoCaixa>(query);;
                 }
@@ -89,6 +89,30 @@ namespace FluxoCaixa.Infrastructure.Repositories
                     result = 0;
                 }
 
+            }
+
+            return result;
+        }
+
+        public async Task<long> RemoveMovimento(int id)
+        {
+            long result = 0;
+            using (var connection = await _connectionManager.GetConnectionAsync())
+            {
+                try
+                {
+                    var deleteItem = @"delete from fluxocaixa where id = @idMovto";
+                    var deleteItemQuery = await connection.QueryFirstOrDefaultAsync<MovtoFluxoCaixa>(deleteItem, new
+                    {
+                        idMovto = id
+                    });
+
+                    result = 1;
+                }
+                catch (Exception ex)
+                {
+                    var error = ex.Message; 
+                }
             }
 
             return result;
