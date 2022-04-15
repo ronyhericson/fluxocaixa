@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "vQJHP6cZrcDc60bK3Oz92B00OVbo3FV17r6mxe/oU9lDvRMS9mZhqDbTewx4wHoovt+4//qN0p+kCBS8rojzuw==",
+  "dgSpecHash": "CBAjCpRJOr8voJccSK9cwTUoVHpzmdE+YO5kMWdS746BME9hSoqV1JfbE7ndglIpIukR1iMQ4STxJ3WO4bFHBw==",
   "success": true,
   "projectFilePath": "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Infrastructure\\FluxoCaixa.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Usuario\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",

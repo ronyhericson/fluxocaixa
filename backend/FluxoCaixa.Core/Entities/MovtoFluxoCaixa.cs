@@ -2,7 +2,7 @@ using System;
 
 namespace FluxoCaixa.Core.Entities
 {
-    public class FluxoCaixa
+    public class MovtoFluxoCaixa
     {
         public DateTime dt_movimento { get; set; }
         public string tp_movimento { get; set; }
