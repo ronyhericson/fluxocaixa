@@ -13,7 +13,6 @@ Desenho da solução <br />
   <br />
   <code>npm install</code>
 
-  <br />
 Processos de inicialização
 <br />
   <code>npm start</code>
