@@ -19,6 +19,22 @@ class FluxoCaixaService {
         });
     }
 
+    createMovimento = (movimento) => {
+        return new Promise((resolve, reject) => {
+            axiosService.axios.post('/FluxoCaixa', movimento)
+                .then((response) => {
+                    if (response.data) {
+                        resolve(response.data);
+                    } else {
+                        reject(response.error);
+                    }
+                })
+                .catch((error) => {
+                    reject(error)
+                });
+        });
+    }
+
 }
 
 const fluxoCaixaService = new FluxoCaixaService();
