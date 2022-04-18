@@ -48,6 +48,18 @@ namespace FluxoCaixa.API.Controllers
             return Ok(listLançamentosViewModel);
         }
 
+        [HttpGet]          
+        [ProducesResponseType(typeof(FluxoCaixaConsolidadoViewModel), (int)HttpStatusCode.OK)]
+        [Route("GetConsolidado")]
+        public async Task<ActionResult<FluxoCaixaConsolidadoViewModel>> GetConsolidado()
+        {
+            var listLancamentos = await _fluxoCaixaService.GetSaldoConsolidado();
+
+            var listLançamentosViewModel = _mapper.Map<FluxoCaixaConsolidadoViewModel>(listLancamentos);
+
+            return Ok(listLançamentosViewModel);
+        }
+
         [HttpGet]            
         [Route("{id}")]
         [ProducesResponseType(typeof(IEnumerable<FluxoCaixaViewModel>), (int)HttpStatusCode.OK)]

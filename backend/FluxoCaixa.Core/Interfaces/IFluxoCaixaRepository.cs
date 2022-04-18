@@ -10,5 +10,6 @@ namespace FluxoCaixa.Core.Interfaces
         Task<MovtoFluxoCaixa> GetUltimoLancamento();
         Task<IEnumerable<MovtoFluxoCaixa>> GetLancamentos(int id = 0);
         Task<long> RemoveMovimento(int id);
+        Task<MovtoFluxoCaixaConsolidado> GetSaldoConsolidado();
     }
 }

@@ -37,5 +37,10 @@ namespace FluxoCaixa.Application.Services
         {
             return await _fluxoCaixaRepository.RemoveMovimento(id);
         }
+
+        public async Task<MovtoFluxoCaixaConsolidado> GetSaldoConsolidado()
+        {
+            return await _fluxoCaixaRepository.GetSaldoConsolidado();
+        }
     }
 }
