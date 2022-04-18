@@ -9,6 +9,7 @@ import Select from '@mui/material/Select';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 
 const useStyles = makeStyles({
     root: {
@@ -91,6 +92,17 @@ const useStyles = makeStyles({
         '&:hover .MuiSvgIcon-root': {
             color: '#999',
         },
+    },
+    btnRemove:{
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        cursor: 'pointer',
+        '&:hover .MuiSvgIcon-root': {
+            color: 'red',
+        },
     }
 });
 
@@ -114,10 +126,10 @@ export default () => {
     const createMovimento = async () => {
 
         const movimento = {
-            dt_movimento : dateValue,
-            tp_movimento : tipo,
-            descricao : descMovimento,
-            vl_movimento : valor
+            dt_movimento: dateValue,
+            tp_movimento: tipo,
+            descricao: descMovimento,
+            vl_movimento: valor
         }
 
         await fluxoCaixaService.createMovimento(movimento);
@@ -125,7 +137,12 @@ export default () => {
         LimpaCamposEdicao();
     }
 
-    function LimpaCamposEdicao(){
+    const removeMovimento = async (id) => {
+        await fluxoCaixaService.removeMovimento(id);
+        getMovimentos();        
+    }
+
+    function LimpaCamposEdicao() {
         setDateValue(null);
         setTipo('');
         setDescMovimento('');
@@ -136,29 +153,14 @@ export default () => {
         getMovimentos();
     }, []);
 
-    
+
 
     return (
         <div className={classes.root}>
             <div className={classes.titulo}>
                 Fluxo de Caixa - Lançamentos de Débitos e Créditos
             </div>
-            <div className={classes.edicao}>
-                <div style={{ marginRight: 10 }}>
-                    <TextField
-                        type="date"
-                        id="outlined-basic"
-                        label="Data"
-                        variant="outlined"
-                        margin="dense"
-                        size="small"
-                        value={dateValue}
-                        onChange={(e) => setDateValue(e.target.value)}
-                        inputProps={{ style: { textTransform: "uppercase" } }}
-                        InputLabelProps={{ shrink: true, }}
-                        style={{ width: 160 }}
-                    />
-                </div>
+            <div className={classes.edicao}>                
                 <div style={{ marginRight: 10 }}>
                     <FormControl fullWidth>
                         <InputLabel id="demo-simple-select-label">Tipo</InputLabel>
@@ -203,7 +205,7 @@ export default () => {
                             label="Valor"
                             margin="dense"
                             size="small"
-                            style={{ width: 90 }}
+                            style={{ width: 100 }}
                         />
                     </FormControl>
                 </div>
@@ -217,7 +219,8 @@ export default () => {
                     <div className={classes.columnHeader}>Tipo </div>
                     <div className={classes.columnHeader}>Descrição </div>
                     <div className={classes.columnHeader}>Valor </div>
-                    <div className={classes.columnHeader} style={{ borderRight: '0px' }}>Saldo Atual </div>
+                    <div className={classes.columnHeader}>Saldo Atual </div>
+                    <div style={{ width: 200, borderRight: '0px' }}></div>
                 </div>
                 {
                     (lista || []) && lista.map((item) => {
@@ -227,7 +230,12 @@ export default () => {
                                 <div className={classes.columnRow}>{item.tp_movimento}</div>
                                 <div className={classes.columnRow}>{item.descricao}</div>
                                 <div className={classes.columnRow}>{item.vl_movimento}</div>
-                                <div className={classes.columnRow} style={{ borderRight: '0px' }}>{item.vl_saldoatual}</div>
+                                <div className={classes.columnRow}>{item.vl_saldoatual}</div>
+                                <div style={{ width: 200, borderRight: '0px' }}>
+                                    <div className={classes.btnRemove} onClick={() => removeMovimento(item.id)}>
+                                        <RemoveCircleIcon />
+                                    </div>
+                                </div>
                             </div>
                         )
                     })

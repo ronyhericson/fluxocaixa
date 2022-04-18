@@ -35,6 +35,22 @@ class FluxoCaixaService {
         });
     }
 
+    removeMovimento = (id) => {
+        return new Promise((resolve, reject) => {
+            axiosService.axios.delete('/FluxoCaixa/' + id)
+                .then((response) => {
+                    if (response.data) {
+                        resolve(response.data);
+                    } else {
+                        reject(response.error);
+                    }
+                })
+                .catch((error) => {
+                    reject(error)
+                });
+        });
+    }
+
 }
 
 const fluxoCaixaService = new FluxoCaixaService();
