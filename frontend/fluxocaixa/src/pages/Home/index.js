@@ -23,6 +23,7 @@ const useStyles = makeStyles({
         width: '60%',
         height: 'calc(100% - 50px)',
         display: 'flex',
+        flexDirection: 'column',
         border: '1px solid #999',
         borderRadius: 10,
     },
@@ -31,13 +32,33 @@ const useStyles = makeStyles({
         height: 35,
         borderBottom: '1px solid #999',
         display: 'flex',
-
+    },
+    row: {
+        width: '100%',
+        height: 35,
+        borderBottom: '1px solid #999',
+        display: 'flex',
+        cursor: 'pointer',
+        '&:hover': {
+            backgroundColor: '#EDEDED'
+        }
     },
     columnHeader: {
         width: '100%',
         height: '100%',
         fontSize: 18,
         fontWeight: 600,
+        color: '#999',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRight: '1px solid #999',
+        borderBottom: '1px solid #999',
+    },
+    columnRow: {
+        width: '100%',
+        height: '100%',
+        fontSize: 14,        
         color: '#999',
         display: 'flex',
         alignItems: 'center',
@@ -52,19 +73,15 @@ const useStyles = makeStyles({
 
 export default () => {
     const classes = useStyles();
-    const [movimentos, setMovimentos] = useState([]);
+    const [lista, setLista] = useState([]);
 
     const getMovimentos = async () => {
-        return await fluxoCaixaService.getMovimentos();
-    }
-
-    const atualizaMovimento = () => {
-        setMovimentos(getMovimentos());
+        const lista = await fluxoCaixaService.getMovimentos();
+        setLista(lista);
     }
 
     useEffect(() => {
-        atualizaMovimento();
-        console.log('movimentos', movimentos);
+        getMovimentos();
     }, []);
 
 
@@ -82,10 +99,14 @@ export default () => {
                     <div className={classes.columnHeader} style={{ borderRight: '0px' }}>Saldo Atual </div>
                 </div>
                 {
-                    (movimentos || []) && movimentos.map((item) => {
+                    (lista || []) && lista.map((item) => {
                         return (
-                            <div className={classes.gridRows}>
-                                {item.dt_movimento}
+                            <div className={classes.row}>
+                                <div className={classes.columnRow}>{item.dt_movimento}</div>
+                                <div className={classes.columnRow}>{item.tp_movimento}</div>
+                                <div className={classes.columnRow}>{item.descricao}</div>
+                                <div className={classes.columnRow}>{item.vl_movimento}</div>
+                                <div className={classes.columnRow} style={{ borderRight: '0px' }}>{item.vl_saldoatual}</div>
                             </div>
                         )
                     })
