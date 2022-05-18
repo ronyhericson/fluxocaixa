@@ -1,6 +1,8 @@
 using System;
 using FluxoCaixa.API.Extensions;
+using FluxoCaixa.Core.Entities;
 using FluxoCaixa.Core.Interfaces;
+using FluxoCaixa.Infrastructure.Commands;
 using FluxoCaixa.Infrastructure.Repositories;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
@@ -34,14 +36,15 @@ namespace FluxoCaixa.API
                       )
                   );
 
-            Environment.SetEnvironmentVariable("connectionString", Configuration["DatabaseSettings:ConnectionString"]);
-
+            Environment.SetEnvironmentVariable("connectionString", Configuration["DatabaseSettings:ConnectionString"]);            
+            services.AddCommandHandler<AddFluxoCaixaHandler, MovtoFluxoCaixa>();
             services
                 .AddRepositories()
                 .AddServices()
                 .AddCors()
                 .AddCustomFormat();
 
+            services.AddScoped<ICommandsProcessor, CommandsProcessor>();
             services.AddAutoMapper(typeof(Startup));
             
             services.AddSwaggerGen(c =>

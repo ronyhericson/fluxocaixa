@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "kQCIVWIwanbCtdaqwZbSAMefCCGYXXCmPJ5N2rsbpZw5MhsMktAd6Rd/WhvgLyzP/ljupEOyQjynr0ruXFyM6Q==",
+  "success": true,
+  "projectFilePath": "D:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Application\\FluxoCaixa.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Futura\\.nuget\\packages\\ae.net.mail\\1.7.10\\ae.net.mail.1.7.10.nupkg.sha512",
+    "C:\\Users\\Futura\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
+    "C:\\Users\\Futura\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
+    "C:\\Users\\Futura\\.nuget\\packages\\npgsql\\5.0.5\\npgsql.5.0.5.nupkg.sha512",
+    "C:\\Users\\Futura\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'AE.Net.Mail 1.7.10' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto 'net5.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "AE.Net.Mail",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}

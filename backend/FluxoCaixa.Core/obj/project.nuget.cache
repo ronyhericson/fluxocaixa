@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "QFIEE18SB1f5Eh2r6QXrw7XnMtjiXF8r5qvhtbQ1ieTHYjmQmMs8YxBkekEyXq6HjgtvIHfyr0rW3o+N8hKwYQ==",
+  "success": true,
+  "projectFilePath": "D:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Core\\FluxoCaixa.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Futura\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
+    "C:\\Users\\Futura\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
+    "C:\\Users\\Futura\\.nuget\\packages\\npgsql\\5.0.5\\npgsql.5.0.5.nupkg.sha512",
+    "C:\\Users\\Futura\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}
