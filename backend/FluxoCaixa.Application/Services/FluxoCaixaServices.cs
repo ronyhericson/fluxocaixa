@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using FluxoCaixa.Application.Services.Interfaces;
 using FluxoCaixa.Core.Entities;
@@ -38,9 +40,21 @@ namespace FluxoCaixa.Application.Services
             return await _fluxoCaixaRepository.RemoveMovimento(id);
         }
 
-        public async Task<MovtoFluxoCaixaConsolidado> GetSaldoConsolidado()
-        {
-            return await _fluxoCaixaRepository.GetSaldoConsolidado();
+        public async Task<dynamic> GetSaldoConsolidado()
+        {            
+            var listaMovimentos = await _fluxoCaixaRepository.GetLancamentos();            
+            var totalCredito = listaMovimentos.Where(x => x.tp_movimento.Equals("Credito")).Sum(s => s.vl_movimento);
+            var totalDebito = listaMovimentos.Where(x => x.tp_movimento.Equals("Debito")).Sum(s => s.vl_movimento);
+            var saldoAtual = totalCredito - totalDebito;
+
+            var saldoConsolidado = new {
+                date = DateTime.Now,
+                totalCredito,
+                totalDebito,
+                saldoAtual
+            };
+           
+            return saldoConsolidado;
         }
     }
 }

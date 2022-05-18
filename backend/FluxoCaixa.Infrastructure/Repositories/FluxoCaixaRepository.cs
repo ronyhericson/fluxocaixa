@@ -65,53 +65,6 @@ namespace FluxoCaixa.Infrastructure.Repositories
             return result;
         }
 
-        public async Task<MovtoFluxoCaixaConsolidado> GetSaldoConsolidado()
-        {
-            var result = new MovtoFluxoCaixaConsolidado();
-
-            using (var connection = await _connectionManager.GetConnectionAsync())
-            {
-                try
-                {
-                    StringBuilder query = new StringBuilder();
-                    query.AppendLine("Select distinct date(now()),	   ");
-                    query.AppendLine("	   SUM(a.totalCredito) as totalCredito, ");
-                    query.AppendLine("	   SUM(a.totalDebito) as totalDebito, ");
-                    query.AppendLine("	   SUM(a.totalCredito)- SUM(a.totalDebito) as saldoAtual ");
-                    query.AppendLine("From ( ");
-                    query.AppendLine("	select distinct SUM(vl_movimento) as totalDebito, ");
-                    query.AppendLine("		   0 as totalCredito ");
-                    query.AppendLine("	from fluxocaixa ");
-                    query.AppendLine("	where date(dt_movimento) = date(now()) ");
-                    query.AppendLine("	 and tp_movimento = 'DEBITO' ");
-                    query.AppendLine("	union all  ");
-                    query.AppendLine("	select 0 as totalDebito, ");
-                    query.AppendLine("		   SUM(vl_movimento) as totalCredito "); 
-                    query.AppendLine("	from fluxocaixa ");
-                    query.AppendLine("	where date(dt_movimento) = date(now()) ");
-                    query.AppendLine("	 and tp_movimento = 'CREDITO' ");
-                    query.AppendLine("	union all ");
-                    query.AppendLine("	select 0 as totalDebito, ");
-                    query.AppendLine("		   0 as totalCredito	   ");
-                    query.AppendLine("	from fluxocaixa ");
-                    query.AppendLine("	where date(dt_movimento) = date(now()) ");
-                    query.AppendLine(") as a ");
-
-                    var FluxoCaixaQuery = await connection.QueryFirstOrDefaultAsync<MovtoFluxoCaixaConsolidado>(query.ToString());
-
-                    result = FluxoCaixaQuery;
-                }
-                catch (Exception e)
-                {
-                    var error = e.Message;
-                    return null;
-                }
-
-            }
-
-            return result;
-        }
-
         public async Task<int> CreateMovto(MovtoFluxoCaixa fluxoCaixa)
         {
             int result = 0;
