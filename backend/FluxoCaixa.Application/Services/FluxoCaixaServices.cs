@@ -32,7 +32,8 @@ namespace FluxoCaixa.Application.Services
 
         public async Task<IEnumerable<MovtoFluxoCaixa>> GetLancamentos(int id = 0)
         {
-            return await _fluxoCaixaRepository.GetLancamentos(id);
+            //return await _fluxoCaixaRepository.GetLancamentos(id);
+            return null;
         }
 
         public async Task<long> RemoveMovimento(int id)

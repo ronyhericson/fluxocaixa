@@ -1,6 +1,8 @@
 using System;
 using FluxoCaixa.API.Extensions;
 using FluxoCaixa.ApplicationCQRS.Commands.FluxoCaixa.AddFluxoCaixa;
+using FluxoCaixa.ApplicationCQRS.Commands.FluxoCaixa.RemoveFluxoCaixa;
+using FluxoCaixa.ApplicationCQRS.Queries.FluxoCaixaQueries;
 using FluxoCaixa.Core.Interfaces;
 using FluxoCaixa.Infrastructure.Repositories;
 using HealthChecks.UI.Client;
@@ -39,6 +41,8 @@ namespace FluxoCaixa.API
             Environment.SetEnvironmentVariable("connectionString", Configuration["DatabaseSettings:ConnectionString"]);
 
             services.AddMediatR(typeof(AddFluxoCaixaCommand)); 
+            services.AddMediatR(typeof(RemoveFluxoCaixaCommand)); 
+            services.AddMediatR(typeof(GetAllFluxoCaixaQuery)); 
             
             services
                 .AddRepositories()

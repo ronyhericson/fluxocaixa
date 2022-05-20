@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Dapper;
 using FluxoCaixa.Core.Entities;
 using FluxoCaixa.Core.Interfaces;
-
+using FluxoCaixa.Core.ViewModel;
 
 namespace FluxoCaixa.Infrastructure.Repositories
 {
@@ -17,9 +17,9 @@ namespace FluxoCaixa.Infrastructure.Repositories
         {
             _connectionManager = connectionManager;
         }
-        public async Task<IEnumerable<MovtoFluxoCaixa>> GetLancamentos(int id = 0)
+        public async Task<IEnumerable<FluxoCaixaViewModel>> GetLancamentos(int id = 0)
         {
-            var result = new List<MovtoFluxoCaixa>();
+            var result = new List<FluxoCaixaViewModel>();
 
             using (var connection = await _connectionManager.GetConnectionAsync())
             {
@@ -27,7 +27,7 @@ namespace FluxoCaixa.Infrastructure.Repositories
                 {
                     var query = string.Format("Select * from fluxocaixa {0} order by id ", id > 0 ? " Where id = " + id.ToString() : string.Empty);
                    
-                    result =(List<MovtoFluxoCaixa>)await connection.QueryAsync<MovtoFluxoCaixa>(query);;
+                    result =(List<FluxoCaixaViewModel>)await connection.QueryAsync<FluxoCaixaViewModel>(query);;
                 }
                 catch (Exception e)
                 {
