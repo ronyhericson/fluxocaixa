@@ -17,7 +17,7 @@ namespace FluxoCaixa.API.Extensions
 
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
-            services.AddScoped<IFluxoCaixaServices, FluxoCaixaServices>();
+            // services.AddScoped<IFluxoCaixaServices, FluxoCaixaServices>();
             return services;
         }
 

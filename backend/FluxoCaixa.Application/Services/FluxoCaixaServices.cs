@@ -27,7 +27,7 @@ namespace FluxoCaixa.Application.Services
             else    
                 fluxoCaixa.vl_saldoatual = fluxoCaixa.vl_movimento;
 
-            return await _fluxoCaixaRepository.CreateMovto(fluxoCaixa);
+            return 0;//await _fluxoCaixaRepository.CreateMovto(fluxoCaixa);
         }
 
         public async Task<IEnumerable<MovtoFluxoCaixa>> GetLancamentos(int id = 0)

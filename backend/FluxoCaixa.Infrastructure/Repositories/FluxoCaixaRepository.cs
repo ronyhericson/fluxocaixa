@@ -65,7 +65,7 @@ namespace FluxoCaixa.Infrastructure.Repositories
             return result;
         }
 
-        public async Task<int> CreateMovto(MovtoFluxoCaixa fluxoCaixa)
+        public async Task<int> CreateMovto(FluxoCaixaEntity fluxoCaixa)
         {
             int result = 0;
 
@@ -81,7 +81,7 @@ namespace FluxoCaixa.Infrastructure.Repositories
                         VlMovito = fluxoCaixa.vl_movimento,
                         VlSaldoAtual = fluxoCaixa.vl_saldoatual
                     });
-
+                    
                     result = 1;
                 }
                 catch (Exception e)

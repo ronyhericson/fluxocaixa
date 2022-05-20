@@ -1,8 +1,10 @@
 using System;
 using FluxoCaixa.API.Extensions;
+using FluxoCaixa.ApplicationCQRS.Commands.FluxoCaixa.AddFluxoCaixa;
 using FluxoCaixa.Core.Interfaces;
 using FluxoCaixa.Infrastructure.Repositories;
 using HealthChecks.UI.Client;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
@@ -36,6 +38,8 @@ namespace FluxoCaixa.API
 
             Environment.SetEnvironmentVariable("connectionString", Configuration["DatabaseSettings:ConnectionString"]);
 
+            services.AddMediatR(typeof(AddFluxoCaixaCommand)); 
+            
             services
                 .AddRepositories()
                 .AddServices()
