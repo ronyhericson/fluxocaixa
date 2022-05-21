@@ -10,7 +10,7 @@ WORKDIR /src
 COPY ["FluxoCaixa.API/FluxoCaixa.API.csproj", "FluxoCaixa.API/"]
 COPY ["FluxoCaixa.Infrastructure/FluxoCaixa.Infrastructure.csproj", "FluxoCaixa.Infrastructure/"]
 COPY ["FluxoCaixa.Core/FluxoCaixa.Core.csproj", "FluxoCaixa.Core/"]
-COPY ["FluxoCaixa.Application/FluxoCaixa.Application.csproj", "FluxoCaixa.Application/"]
+COPY ["FluxoCaixa.ApplicationCQRS/FluxoCaixa.ApplicationCQRS.csproj", "FluxoCaixa.ApplicationCQRS/"]
 RUN dotnet restore "FluxoCaixa.API/FluxoCaixa.API.csproj"
 COPY . .
 WORKDIR "FluxoCaixa.API"
