@@ -15,8 +15,7 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\FluxoCaixa.Application\FluxoCaixa.Application.csproj" />
+  <ItemGroup>    
     <ProjectReference Include="..\FluxoCaixa.Core\FluxoCaixa.Core.csproj" />
     <ProjectReference Include="..\FluxoCaixa.Infrastructure\FluxoCaixa.Infrastructure.csproj" />
     <ProjectReference Include="..\FluxoCaixa.ApplicationCQRS\FluxoCaixa.ApplicationCQRS.csproj" />
