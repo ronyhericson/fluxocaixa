@@ -7,7 +7,6 @@ C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\FluxoCaixa.API.ru
 C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\FluxoCaixa.API.dll
 C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\ref\FluxoCaixa.API.dll
 C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\FluxoCaixa.API.pdb
-C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\AE.Net.Mail.dll
 C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\HealthChecks.NpgSql.dll
 C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\HealthChecks.UI.Client.dll
 C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\HealthChecks.UI.Core.dll
@@ -36,11 +35,9 @@ C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\Swashbuckle.AspNe
 C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\FluxoCaixa.Application.dll
 C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\FluxoCaixa.ApplicationCQRS.dll
 C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\FluxoCaixa.Core.dll
 C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\FluxoCaixa.Infrastructure.dll
-C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\FluxoCaixa.Application.pdb
 C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\FluxoCaixa.Core.pdb
 C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\FluxoCaixa.Infrastructure.pdb
 C:\Projetos\fluxocaixa\backend\FluxoCaixa.API\bin\Debug\net5.0\FluxoCaixa.ApplicationCQRS.pdb

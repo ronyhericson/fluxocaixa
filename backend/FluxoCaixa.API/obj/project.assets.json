@@ -2,15 +2,6 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "AE.Net.Mail/1.7.10": {
-        "type": "package",
-        "compile": {
-          "lib/net45/AE.Net.Mail.dll": {}
-        },
-        "runtime": {
-          "lib/net45/AE.Net.Mail.dll": {}
-        }
-      },
       "AspNetCore.HealthChecks.NpgSql/5.0.2": {
         "type": "package",
         "dependencies": {
@@ -614,20 +605,6 @@
           "lib/netcoreapp3.0/System.Text.Json.dll": {}
         }
       },
-      "FluxoCaixa.Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "AE.Net.Mail": "1.7.10",
-          "FluxoCaixa.Core": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/FluxoCaixa.Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/FluxoCaixa.Application.dll": {}
-        }
-      },
       "FluxoCaixa.ApplicationCQRS/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -678,21 +655,6 @@
     }
   },
   "libraries": {
-    "AE.Net.Mail/1.7.10": {
-      "sha512": "qOeui+HJQkonh7OCVfOLcuQtzsFYrNSLfKy8BMvnP237uDUSCn/9OT1Xt6Sr/pqOYbOgEFvUKH6Z2oa5r8IAfg==",
-      "type": "package",
-      "path": "ae.net.mail/1.7.10",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ae.net.mail.1.7.10.nupkg.sha512",
-        "ae.net.mail.nuspec",
-        "lib/net40/AE.Net.Mail.dll",
-        "lib/net40/AE.Net.Mail.pdb",
-        "lib/net45/AE.Net.Mail.dll",
-        "lib/net45/AE.Net.Mail.pdb"
-      ]
-    },
     "AspNetCore.HealthChecks.NpgSql/5.0.2": {
       "sha512": "SgqAg8GZbbk4s/NvJaHL1Y/dfxE0YOqBqjvD2ss2u/43ghAlKwAx+7Xkxjvuarmw4P/JYlJEfQuQ5BJUgEIl8g==",
       "type": "package",
@@ -1834,11 +1796,6 @@
         "version.txt"
       ]
     },
-    "FluxoCaixa.Application/1.0.0": {
-      "type": "project",
-      "path": "../FluxoCaixa.Application/FluxoCaixa.Application.csproj",
-      "msbuildProject": "../FluxoCaixa.Application/FluxoCaixa.Application.csproj"
-    },
     "FluxoCaixa.ApplicationCQRS/1.0.0": {
       "type": "project",
       "path": "../FluxoCaixa.ApplicationCQRS/FluxoCaixa.ApplicationCQRS.csproj",
@@ -1861,7 +1818,6 @@
       "AspNetCore.HealthChecks.UI.Client >= 5.0.1",
       "AutoMapper >= 10.1.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
-      "FluxoCaixa.Application >= 1.0.0",
       "FluxoCaixa.ApplicationCQRS >= 1.0.0",
       "FluxoCaixa.Core >= 1.0.0",
       "FluxoCaixa.Infrastructure >= 1.0.0",
@@ -1900,9 +1856,6 @@
           "projectReferences": {
             "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.ApplicationCQRS\\FluxoCaixa.ApplicationCQRS.csproj": {
               "projectPath": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.ApplicationCQRS\\FluxoCaixa.ApplicationCQRS.csproj"
-            },
-            "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Application\\FluxoCaixa.Application.csproj": {
-              "projectPath": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Application\\FluxoCaixa.Application.csproj"
             },
             "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Core\\FluxoCaixa.Core.csproj": {
               "projectPath": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Core\\FluxoCaixa.Core.csproj"
@@ -1977,17 +1930,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "O pacote 'AE.Net.Mail 1.7.10' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto 'net5.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
-      "libraryId": "AE.Net.Mail",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  }
 }

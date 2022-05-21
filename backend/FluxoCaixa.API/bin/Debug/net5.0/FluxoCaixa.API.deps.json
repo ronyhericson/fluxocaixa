@@ -37,7 +37,6 @@
           "AspNetCore.HealthChecks.UI.Client": "5.0.1",
           "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
-          "FluxoCaixa.Application": "1.0.0",
           "FluxoCaixa.ApplicationCQRS": "1.0.0",
           "FluxoCaixa.Core": "1.0.0",
           "FluxoCaixa.Infrastructure": "1.0.0",
@@ -330,17 +329,6 @@
         },
         "compile": {
           "FluxoCaixa.API.dll": {}
-        }
-      },
-      "AE.Net.Mail/1.7.10": {
-        "runtime": {
-          "lib/net45/AE.Net.Mail.dll": {
-            "assemblyVersion": "1.7.10.0",
-            "fileVersion": "1.7.10.0"
-          }
-        },
-        "compile": {
-          "lib/net45/AE.Net.Mail.dll": {}
         }
       },
       "AspNetCore.HealthChecks.NpgSql/5.0.2": {
@@ -821,18 +809,6 @@
         }
       },
       "System.Text.Json/4.7.2": {},
-      "FluxoCaixa.Application/1.0.0": {
-        "dependencies": {
-          "AE.Net.Mail": "1.7.10",
-          "FluxoCaixa.Core": "1.0.0"
-        },
-        "runtime": {
-          "FluxoCaixa.Application.dll": {}
-        },
-        "compile": {
-          "FluxoCaixa.Application.dll": {}
-        }
-      },
       "FluxoCaixa.ApplicationCQRS/1.0.0": {
         "dependencies": {
           "FluxoCaixa.Core": "1.0.0",
@@ -2556,13 +2532,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AE.Net.Mail/1.7.10": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-qOeui+HJQkonh7OCVfOLcuQtzsFYrNSLfKy8BMvnP237uDUSCn/9OT1Xt6Sr/pqOYbOgEFvUKH6Z2oa5r8IAfg==",
-      "path": "ae.net.mail/1.7.10",
-      "hashPath": "ae.net.mail.1.7.10.nupkg.sha512"
-    },
     "AspNetCore.HealthChecks.NpgSql/5.0.2": {
       "type": "package",
       "serviceable": true,
@@ -2912,11 +2881,6 @@
       "sha512": "sha512-TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
       "path": "system.text.json/4.7.2",
       "hashPath": "system.text.json.4.7.2.nupkg.sha512"
-    },
-    "FluxoCaixa.Application/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "FluxoCaixa.ApplicationCQRS/1.0.0": {
       "type": "project",

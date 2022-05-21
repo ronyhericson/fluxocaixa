@@ -46,8 +46,7 @@ namespace FluxoCaixa.API
             services.AddMediatR(typeof(GetConsolidadoQuery)); 
             
             services
-                .AddRepositories()
-                .AddServices()
+                .AddRepositories()                
                 .AddCors()
                 .AddCustomFormat();
 
@@ -55,7 +54,12 @@ namespace FluxoCaixa.API
             
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FluxoCaixa.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Fluxo de Caixa",
+                    Version = "v1.0",
+                    Description = "Controle de fluxo de caixa simples e dados consolidados diarios."
+                });
             });
 
             services.AddHealthChecks()

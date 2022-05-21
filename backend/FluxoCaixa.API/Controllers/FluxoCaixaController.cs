@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using FluxoCaixa.ApplicationCQRS.Commands.FluxoCaixa.AddFluxoCaixa;
 using FluxoCaixa.ApplicationCQRS.Commands.FluxoCaixa.RemoveFluxoCaixa;
 using FluxoCaixa.ApplicationCQRS.Queries.FluxoCaixaQueries;
-using FluxoCaixa.Core.Entities;
 using FluxoCaixa.Core.ViewModel;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +24,8 @@ namespace FluxoCaixa.API.Controllers
 
         [HttpPost]
         [Route("AddFluxoCaixa")]
+        [ProducesResponseType(typeof(int), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(int), (int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Create([FromBody] AddFluxoCaixaCommand request)
         {
             try
@@ -69,20 +70,9 @@ namespace FluxoCaixa.API.Controllers
             }            
         }
 
-        [HttpGet]
-        [Route("{id}")]
-        [ProducesResponseType(typeof(IEnumerable<FluxoCaixaViewModel>), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<IEnumerable<FluxoCaixaViewModel>>> GetLancamentoById(int id = 0)
-        {
-            // var listLancamentos = await _fluxoCaixaService.GetLancamentos(id);
-
-            // var listLançamentosViewModel = _mapper.Map<List<FluxoCaixaViewModel>>(listLancamentos);
-
-            // return Ok(listLançamentosViewModel);
-            return Ok();
-        }
-
         [HttpDelete]
+        [ProducesResponseType(typeof(int), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(int), (int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Remove([FromBody] RemoveFluxoCaixaCommand request)
         {
             try
