@@ -12,6 +12,7 @@ Fluxo da arquitetura <br />
 
  - SOLID 
  - CQRS 
+ - MediatR
  - Testes Unitarios com XUnit 
  
 <br />    
