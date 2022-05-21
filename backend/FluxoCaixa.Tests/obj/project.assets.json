@@ -2,15 +2,6 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "AE.Net.Mail/1.7.10": {
-        "type": "package",
-        "compile": {
-          "lib/net45/AE.Net.Mail.dll": {}
-        },
-        "runtime": {
-          "lib/net45/AE.Net.Mail.dll": {}
-        }
-      },
       "Castle.Core/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -1463,20 +1454,6 @@
           "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
         }
       },
-      "FluxoCaixa.Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "AE.Net.Mail": "1.7.10",
-          "FluxoCaixa.Core": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/FluxoCaixa.Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/FluxoCaixa.Application.dll": {}
-        }
-      },
       "FluxoCaixa.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -1512,21 +1489,6 @@
     }
   },
   "libraries": {
-    "AE.Net.Mail/1.7.10": {
-      "sha512": "qOeui+HJQkonh7OCVfOLcuQtzsFYrNSLfKy8BMvnP237uDUSCn/9OT1Xt6Sr/pqOYbOgEFvUKH6Z2oa5r8IAfg==",
-      "type": "package",
-      "path": "ae.net.mail/1.7.10",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ae.net.mail.1.7.10.nupkg.sha512",
-        "ae.net.mail.nuspec",
-        "lib/net40/AE.Net.Mail.dll",
-        "lib/net40/AE.Net.Mail.pdb",
-        "lib/net45/AE.Net.Mail.dll",
-        "lib/net45/AE.Net.Mail.pdb"
-      ]
-    },
     "Castle.Core/5.0.0": {
       "sha512": "edc8jjyXqzzy8jFdhs36FZdwmlDDTgqPb2Zy1Q5F/f2uAc88bu/VS/0Tpvgupmpl9zJOvOo5ZizVANb0ltN1NQ==",
       "type": "package",
@@ -5324,11 +5286,6 @@
         "xunit.extensibility.execution.nuspec"
       ]
     },
-    "FluxoCaixa.Application/1.0.0": {
-      "type": "project",
-      "path": "../FluxoCaixa.Application/FluxoCaixa.Application.csproj",
-      "msbuildProject": "../FluxoCaixa.Application/FluxoCaixa.Application.csproj"
-    },
     "FluxoCaixa.Core/1.0.0": {
       "type": "project",
       "path": "../FluxoCaixa.Core/FluxoCaixa.Core.csproj",
@@ -5342,7 +5299,6 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "FluxoCaixa.Application >= 1.0.0",
       "FluxoCaixa.Infrastructure >= 1.0.0",
       "Moq >= 4.18.1",
       "xunit >= 2.4.1",
@@ -5356,11 +5312,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Tests\\FluxoCaixa.Tests.csproj",
+      "projectUniqueName": "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Tests\\FluxoCaixa.Tests.csproj",
       "projectName": "FluxoCaixa.Tests",
-      "projectPath": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Tests\\FluxoCaixa.Tests.csproj",
+      "projectPath": "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Tests\\FluxoCaixa.Tests.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Tests\\obj\\",
+      "outputPath": "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5377,11 +5333,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Application\\FluxoCaixa.Application.csproj": {
-              "projectPath": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Application\\FluxoCaixa.Application.csproj"
-            },
-            "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Infrastructure\\FluxoCaixa.Infrastructure.csproj": {
-              "projectPath": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Infrastructure\\FluxoCaixa.Infrastructure.csproj"
+            "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Infrastructure\\FluxoCaixa.Infrastructure.csproj": {
+              "projectPath": "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Infrastructure\\FluxoCaixa.Infrastructure.csproj"
             }
           }
         }
@@ -5431,17 +5384,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "O pacote 'AE.Net.Mail 1.7.10' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto 'net5.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
-      "libraryId": "AE.Net.Mail",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  }
 }

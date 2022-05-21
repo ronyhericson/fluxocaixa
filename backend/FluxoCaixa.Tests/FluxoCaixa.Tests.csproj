@@ -11,9 +11,10 @@
     <PackageReference Include="xunit.assert" Version="2.4.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\FluxoCaixa.Application\FluxoCaixa.Application.csproj" />
-    <ProjectReference Include="..\FluxoCaixa.Infrastructure\FluxoCaixa.Infrastructure.csproj" />
+  <ItemGroup>    
+    <ProjectReference Include="..\FluxoCaixa.Infrastructure\FluxoCaixa.Infrastructure.csproj" />    
+    <ProjectReference Include="..\FluxoCaixa.Core\FluxoCaixa.Core.csproj" />    
+    <ProjectReference Include="..\FluxoCaixa.ApplicationCQRS\FluxoCaixa.ApplicationCQRS.csproj" />
   </ItemGroup>
 
 </Project>

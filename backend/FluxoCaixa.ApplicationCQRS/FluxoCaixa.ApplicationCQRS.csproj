@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FluxoCaixa.Infrastructure\FluxoCaixa.Infrastructure.csproj" />
-    <ProjectReference Include="..\FluxoCaixa.Core\FluxoCaixa.Core.csproj" />
+    <ProjectReference Include="..\FluxoCaixa.Core\FluxoCaixa.Core.csproj" />    
   </ItemGroup>
 
 </Project>

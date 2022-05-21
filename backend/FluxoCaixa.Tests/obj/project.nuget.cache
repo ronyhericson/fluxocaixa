@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "e6irvDOpEqqRAYU3oRWG9g1SHtRRR2LQdryRkQAwEOCU9Ri3ZXpeEOpEeuk1+WJSSuUtoVkFX0y9Som0wmogZw==",
+  "dgSpecHash": "xVxGayAiEaSbKwj55hUJ4Hqwylcmtzt0BtwDR3AwWlZhKTNSV8YXCjX6JjfnjXxRIF+mccCQt2FXmFSAkRsn5w==",
   "success": true,
-  "projectFilePath": "C:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Tests\\FluxoCaixa.Tests.csproj",
+  "projectFilePath": "c:\\Projetos\\fluxocaixa\\backend\\FluxoCaixa.Tests\\FluxoCaixa.Tests.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Usuario\\.nuget\\packages\\ae.net.mail\\1.7.10\\ae.net.mail.1.7.10.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\castle.core\\5.0.0\\castle.core.5.0.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
@@ -100,16 +99,5 @@
     "C:\\Users\\Usuario\\.nuget\\packages\\xunit.extensibility.core\\2.4.1\\xunit.extensibility.core.2.4.1.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "O pacote 'AE.Net.Mail 1.7.10' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto 'net5.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
-      "libraryId": "AE.Net.Mail",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  "logs": []
 }

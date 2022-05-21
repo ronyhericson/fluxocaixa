@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-using AutoMapper;
-using FluxoCaixa.Application.Services.Interfaces;
 using FluxoCaixa.ApplicationCQRS.Commands.FluxoCaixa.AddFluxoCaixa;
 using FluxoCaixa.ApplicationCQRS.Commands.FluxoCaixa.RemoveFluxoCaixa;
 using FluxoCaixa.ApplicationCQRS.Queries.FluxoCaixaQueries;
