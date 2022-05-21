@@ -1,7 +1,7 @@
 
 using System.Threading;
 using System.Threading.Tasks;
-using FluxoCaixa.ApplicationCQRS.Commands.FluxoCaixa.AddFluxoCaixa;
+using FluxoCaixa.ApplicationCQRS.Commands.FluxoCaixa.RemoveFluxoCaixa;
 using FluxoCaixa.Core.Entities;
 using FluxoCaixa.Core.Interfaces;
 using Moq;
@@ -9,22 +9,22 @@ using Xunit;
 
 namespace FluxoCaixa.Tests
 {
-    public class AddFluxoCaixa
+    public class RemoveFluxoCaixa
     {
         [Fact]
-        public async Task CommandAddIsValid_Executed_Success()
+        public async Task CommandRemoveIsValid_Executed_Success()
         {
             // Arrange
             var fluxoRepository = new Mock<IFluxoCaixaRepository>();
-            var fluxoCaixaCommand = new AddFluxoCaixaCommand("salario","Credito",3500);
+            var fluxoCaixaCommand = new RemoveFluxoCaixaCommand(4);
 
             fluxoRepository.Setup(pr => pr.CreateMovto(It.IsAny<FluxoCaixaEntity>())).Verifiable();
             var returnExdpected = 1;
 
-            var addFluxoCaixaCommandHandler = new AddFluxoCaixaCommandHandler(fluxoRepository.Object);
+            var removeFluxoCaixaCommandHandler = new RemoveFluxoCaixaCommandHandler(fluxoRepository.Object);
 
             // Act
-            var fluxoCaixaResult = await  addFluxoCaixaCommandHandler.Handle(fluxoCaixaCommand, new CancellationToken());
+            var fluxoCaixaResult = await  removeFluxoCaixaCommandHandler.Handle(fluxoCaixaCommand, new CancellationToken());
 
             // Assert
             fluxoRepository.Verify(pr => pr.CreateMovto(It.IsAny<FluxoCaixaEntity>()), Times.Once);
