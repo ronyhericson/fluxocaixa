@@ -58,7 +58,18 @@ namespace FluxoCaixa.API.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(FluxoCaixaConsolidadoViewModel), (int)HttpStatusCode.OK)]
         [Route("GetConsolidado")]
-        public async Task<ActionResult<dynamic>> GetConsolidado() => Ok();//await _fluxoCaixaService.GetSaldoConsolidado());
+        public async Task<ActionResult<FluxoCaixaConsolidadoViewModel>> GetConsolidado()
+        {
+            try
+            {
+                var getConsolidado = new GetConsolidadoQuery();
+                return Ok(await mediator.Send(getConsolidado));
+            }
+            catch (Exception)
+            {
+                return BadRequest(new { message = "Problemas para listar os movimentos." });
+            }            
+        }
 
         [HttpGet]
         [Route("{id}")]

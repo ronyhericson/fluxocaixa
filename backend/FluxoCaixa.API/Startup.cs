@@ -43,6 +43,7 @@ namespace FluxoCaixa.API
             services.AddMediatR(typeof(AddFluxoCaixaCommand)); 
             services.AddMediatR(typeof(RemoveFluxoCaixaCommand)); 
             services.AddMediatR(typeof(GetAllFluxoCaixaQuery)); 
+            services.AddMediatR(typeof(GetConsolidadoQuery)); 
             
             services
                 .AddRepositories()
