@@ -1,10 +1,12 @@
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-using AutoMapper;
-using FluxoCaixa.Application.Services.Interfaces;
-using FluxoCaixa.Core.Entities;
+using FluxoCaixa.ApplicationCQRS.Commands.FluxoCaixa.AddFluxoCaixa;
+using FluxoCaixa.ApplicationCQRS.Commands.FluxoCaixa.RemoveFluxoCaixa;
+using FluxoCaixa.ApplicationCQRS.Queries.FluxoCaixaQueries;
 using FluxoCaixa.Core.ViewModel;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FluxoCaixa.API.Controllers
@@ -13,69 +15,76 @@ namespace FluxoCaixa.API.Controllers
     [Route("api/v1/[controller]")]
     public class FluxoCaixaController : ControllerBase
     {
-        private readonly IFluxoCaixaServices _fluxoCaixaService;
-        private readonly IMapper _mapper;
+        private readonly IMediator mediator;
 
-        public FluxoCaixaController(IFluxoCaixaServices fluxoCaixaService, IMapper mapper)
+        public FluxoCaixaController(IMediator mediator)
         {
-            _fluxoCaixaService = fluxoCaixaService;
-            _mapper = mapper;
+            this.mediator = mediator;
         }
 
-        [HttpPost]        
-        [ProducesResponseType(typeof(FluxoCaixaViewModel), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<FluxoCaixaViewModel>> CreateFluxoCaixa([FromBody] FluxoCaixaViewModel fluxoCaixa)
+        [HttpPost]
+        [Route("AddFluxoCaixa")]
+        [ProducesResponseType(typeof(int), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(int), (int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> Create([FromBody] AddFluxoCaixaCommand request)
         {
-            var fluxoCaixaViewModel = new FluxoCaixaViewModel();
-            var domainFLuxoCaixa = _mapper.Map<MovtoFluxoCaixa>(fluxoCaixa);
-            var retunCreatedFluxoCaixa = await _fluxoCaixaService.CreateMovto(domainFLuxoCaixa);
-
-            if(retunCreatedFluxoCaixa == 0)
+            try
+            {
+                await mediator.Send(request);
+                return Ok(new { message = "Movimento inserido com sucesso." });
+            }
+            catch (Exception)
+            {
                 return BadRequest(new { message = "Problemas para inserir este movimento." });
-
-            
-            return Ok(new { message = "Movimento inserido com sucesso." });
+            }
         }
 
-        [HttpGet]          
+        [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<FluxoCaixaViewModel>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<FluxoCaixaViewModel>>> GetLancamentos()
         {
-            var listLancamentos = await _fluxoCaixaService.GetLancamentos();
-
-            var listLançamentosViewModel = _mapper.Map<List<FluxoCaixaViewModel>>(listLancamentos);
-
-            return Ok(listLançamentosViewModel);
+            try
+            {
+                var getAll = new GetAllFluxoCaixaQuery();
+                return Ok(await mediator.Send(getAll));
+            }
+            catch (Exception)
+            {
+                return BadRequest(new { message = "Problemas para listar os movimentos." });
+            }
         }
 
-        [HttpGet]          
+        [HttpGet]
         [ProducesResponseType(typeof(FluxoCaixaConsolidadoViewModel), (int)HttpStatusCode.OK)]
         [Route("GetConsolidado")]
-        public async Task<ActionResult<dynamic>> GetConsolidado() =>  Ok(await _fluxoCaixaService.GetSaldoConsolidado());
-        
-        [HttpGet]            
-        [Route("{id}")]
-        [ProducesResponseType(typeof(IEnumerable<FluxoCaixaViewModel>), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<IEnumerable<FluxoCaixaViewModel>>> GetLancamentoById(int id = 0)
+        public async Task<ActionResult<FluxoCaixaConsolidadoViewModel>> GetConsolidado()
         {
-            var listLancamentos = await _fluxoCaixaService.GetLancamentos(id);
-
-            var listLançamentosViewModel = _mapper.Map<List<FluxoCaixaViewModel>>(listLancamentos);
-
-            return Ok(listLançamentosViewModel);
+            try
+            {
+                var getConsolidado = new GetConsolidadoQuery();
+                return Ok(await mediator.Send(getConsolidado));
+            }
+            catch (Exception)
+            {
+                return BadRequest(new { message = "Problemas para listar os movimentos." });
+            }            
         }
 
-        [HttpDelete]   
-        [Route("{id}")]     
-        [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<string>> RemoveLancamento(int id)
+        [HttpDelete]
+        [ProducesResponseType(typeof(int), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(int), (int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> Remove([FromBody] RemoveFluxoCaixaCommand request)
         {
-            var removeMovto = await _fluxoCaixaService.RemoveMovimento(id);
-
-            if(removeMovto == 0)
+            try
+            {
+                await mediator.Send(request);
+                return Ok(new { message = "Movimento removido com sucesso." });
+            }
+            catch (Exception)
+            {
                 return BadRequest(new { message = "Problemas para remover este movimento." });
+            }
 
-            return Ok(new { message = "Movimento removido com sucesso." });
         }
     }
 }

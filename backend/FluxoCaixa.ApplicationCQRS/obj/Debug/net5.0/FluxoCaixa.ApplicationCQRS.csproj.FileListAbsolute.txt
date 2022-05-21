@@ -1,0 +1,17 @@
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\bin\Debug\net5.0\FluxoCaixa.ApplicationCQRS.deps.json
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\bin\Debug\net5.0\FluxoCaixa.ApplicationCQRS.dll
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\bin\Debug\net5.0\ref\FluxoCaixa.ApplicationCQRS.dll
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\bin\Debug\net5.0\FluxoCaixa.ApplicationCQRS.pdb
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\bin\Debug\net5.0\FluxoCaixa.Core.dll
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\bin\Debug\net5.0\FluxoCaixa.Infrastructure.dll
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\bin\Debug\net5.0\FluxoCaixa.Infrastructure.pdb
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\bin\Debug\net5.0\FluxoCaixa.Core.pdb
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\obj\Debug\net5.0\FluxoCaixa.ApplicationCQRS.csproj.AssemblyReference.cache
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\obj\Debug\net5.0\FluxoCaixa.ApplicationCQRS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\obj\Debug\net5.0\FluxoCaixa.ApplicationCQRS.AssemblyInfoInputs.cache
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\obj\Debug\net5.0\FluxoCaixa.ApplicationCQRS.AssemblyInfo.cs
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\obj\Debug\net5.0\FluxoCaixa.ApplicationCQRS.csproj.CoreCompileInputs.cache
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\obj\Debug\net5.0\FluxoCaixa.ApplicationCQRS.csproj.CopyComplete
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\obj\Debug\net5.0\FluxoCaixa.ApplicationCQRS.dll
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\obj\Debug\net5.0\ref\FluxoCaixa.ApplicationCQRS.dll
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.ApplicationCQRS\obj\Debug\net5.0\FluxoCaixa.ApplicationCQRS.pdb

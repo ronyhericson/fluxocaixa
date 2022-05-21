@@ -1,8 +1,12 @@
 using System;
 using FluxoCaixa.API.Extensions;
+using FluxoCaixa.ApplicationCQRS.Commands.FluxoCaixa.AddFluxoCaixa;
+using FluxoCaixa.ApplicationCQRS.Commands.FluxoCaixa.RemoveFluxoCaixa;
+using FluxoCaixa.ApplicationCQRS.Queries.FluxoCaixaQueries;
 using FluxoCaixa.Core.Interfaces;
 using FluxoCaixa.Infrastructure.Repositories;
 using HealthChecks.UI.Client;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
@@ -36,9 +40,13 @@ namespace FluxoCaixa.API
 
             Environment.SetEnvironmentVariable("connectionString", Configuration["DatabaseSettings:ConnectionString"]);
 
+            services.AddMediatR(typeof(AddFluxoCaixaCommand)); 
+            services.AddMediatR(typeof(RemoveFluxoCaixaCommand)); 
+            services.AddMediatR(typeof(GetAllFluxoCaixaQuery)); 
+            services.AddMediatR(typeof(GetConsolidadoQuery)); 
+            
             services
-                .AddRepositories()
-                .AddServices()
+                .AddRepositories()                
                 .AddCors()
                 .AddCustomFormat();
 
@@ -46,7 +54,12 @@ namespace FluxoCaixa.API
             
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FluxoCaixa.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Fluxo de Caixa",
+                    Version = "v1.0",
+                    Description = "Controle de fluxo de caixa simples e dados consolidados diarios."
+                });
             });
 
             services.AddHealthChecks()

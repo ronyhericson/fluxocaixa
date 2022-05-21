@@ -1,0 +1,5 @@
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Tests\obj\Debug\net5.0\FluxoCaixa.Tests.csproj.AssemblyReference.cache
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Tests\obj\Debug\net5.0\FluxoCaixa.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Tests\obj\Debug\net5.0\FluxoCaixa.Tests.AssemblyInfoInputs.cache
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Tests\obj\Debug\net5.0\FluxoCaixa.Tests.AssemblyInfo.cs
+C:\Projetos\fluxocaixa\backend\FluxoCaixa.Tests\obj\Debug\net5.0\FluxoCaixa.Tests.csproj.CoreCompileInputs.cache

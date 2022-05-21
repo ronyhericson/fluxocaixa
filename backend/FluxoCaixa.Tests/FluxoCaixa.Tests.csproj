@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Moq" Version="4.18.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.abstractions" Version="2.0.3" />
+    <PackageReference Include="xunit.assert" Version="2.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>    
+    <ProjectReference Include="..\FluxoCaixa.Infrastructure\FluxoCaixa.Infrastructure.csproj" />    
+    <ProjectReference Include="..\FluxoCaixa.Core\FluxoCaixa.Core.csproj" />    
+    <ProjectReference Include="..\FluxoCaixa.ApplicationCQRS\FluxoCaixa.ApplicationCQRS.csproj" />
+  </ItemGroup>
+
+</Project>
