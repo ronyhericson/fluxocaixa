@@ -1,7 +1,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using FluxoCaixa.Core.Entities;
@@ -41,16 +40,16 @@ namespace FluxoCaixa.Infrastructure.Repositories
         }
 
 
-        public async Task<MovtoFluxoCaixa> GetUltimoLancamento()
+        public async Task<FluxoCaixaEntity> GetUltimoLancamento()
         {
-            var result = new MovtoFluxoCaixa();
+            var result = new FluxoCaixaEntity("", "", 0, 0);
 
             using (var connection = await _connectionManager.GetConnectionAsync())
             {
                 try
                 {
                     var query = " Select * from fluxocaixa order by dt_movimento desc  limit 1";
-                    var FluxoCaixaQuery = await connection.QueryFirstOrDefaultAsync<MovtoFluxoCaixa>(query);
+                    var FluxoCaixaQuery = await connection.QueryFirstOrDefaultAsync<FluxoCaixaEntity>(query);
 
                     result = FluxoCaixaQuery;
                 }
@@ -74,7 +73,7 @@ namespace FluxoCaixa.Infrastructure.Repositories
                 try
                 {
                     var query = "INSERT INTO fluxocaixa (dt_movimento, tp_movimento, descricao, vl_movimento, vl_saldoatual) VALUES (now(), @TipoMovto, @Descricao, @VlMovito, @VlSaldoAtual) RETURNING ID;";
-                    var FluxoCaixaQuery = await connection.QueryFirstOrDefaultAsync<MovtoFluxoCaixa>(query, new
+                    var FluxoCaixaQuery = await connection.QueryFirstOrDefaultAsync<FluxoCaixaEntity>(query, new
                     {                      
                         TipoMovto = fluxoCaixa.tp_movimento,
                         Descricao = fluxoCaixa.descricao,
@@ -103,7 +102,7 @@ namespace FluxoCaixa.Infrastructure.Repositories
                 try
                 {
                     var deleteItem = @"delete from fluxocaixa where id = @idMovto";
-                    var deleteItemQuery = await connection.QueryFirstOrDefaultAsync<MovtoFluxoCaixa>(deleteItem, new
+                    var deleteItemQuery = await connection.QueryFirstOrDefaultAsync<FluxoCaixaEntity>(deleteItem, new
                     {
                         idMovto = id
                     });

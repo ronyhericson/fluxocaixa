@@ -8,7 +8,7 @@ namespace FluxoCaixa.API.Mapper
     {
         public FluxoCaixaProfile()
         {
-            CreateMap<FluxoCaixaViewModel, MovtoFluxoCaixa>().ReverseMap();  
+            CreateMap<FluxoCaixaViewModel, FluxoCaixaEntity>().ReverseMap();  
         }
     }
 }

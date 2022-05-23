@@ -8,7 +8,7 @@ namespace FluxoCaixa.Core.Interfaces
     public interface IFluxoCaixaRepository 
     {
         Task<int> CreateMovto(FluxoCaixaEntity fluxoCaixa);
-        Task<MovtoFluxoCaixa> GetUltimoLancamento();
+        Task<FluxoCaixaEntity> GetUltimoLancamento();
         Task<IEnumerable<FluxoCaixaViewModel>> GetLancamentos(int id = 0);
         Task<long> RemoveMovimento(int id);
       
