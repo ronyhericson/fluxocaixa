@@ -23,7 +23,6 @@ namespace FluxoCaixa.API.Controllers
         }
 
         [HttpPost]
-        [Route("AddFluxoCaixa")]
         [ProducesResponseType(typeof(int), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(int), (int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Create([FromBody] AddFluxoCaixaCommand request)
