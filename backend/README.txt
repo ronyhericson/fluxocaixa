@@ -20,16 +20,26 @@ Docker Compose
 Docker
 Swashbuckle (Swagger)
 
+
 ----------------------------------------------------------------------------------------------
-Processos de instalação de dependencias e compilçação dos projetos 
+Processos de instalação de dependências e compilação dos projetos 
 ----------------------------------------------------------------------------------------------
+Instalar Docker-Desktop (docker e docker-compose)
+Instalar Framework .Net 5.0
+
+clonar repositorio de: 
+https://github.com/ronyhericson/fluxocaixa
+
+Ir para pasta ../fluxocaixa/backend/FluxoCaixa.API 
 
 Restore dos pacotes nuget 
 dotnet restore --source https://api.nuget.org/v3/index.json
 
 dotnet build
 
-Processos de inicialização do banco postgres q execução de scripts de inicialização
+Voltar para pasta ../fluxocaixa/backend
+
+Processos de inicialização dos container de banco postgres, execução de scripts de inicialização e serviço 
 
 docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 
