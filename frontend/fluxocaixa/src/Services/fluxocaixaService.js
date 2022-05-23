@@ -36,8 +36,11 @@ class FluxoCaixaService {
     }
 
     removeMovimento = (id) => {
+
+        const removeObject = { id };
+
         return new Promise((resolve, reject) => {
-            axiosService.axios.delete('/FluxoCaixa/' + id)
+            axiosService.axios.delete('/FluxoCaixa', removeObject)
                 .then((response) => {
                     if (response.data) {
                         resolve(response.data);
